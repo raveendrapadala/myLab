@@ -1,0 +1,32 @@
+/*
+* Author: Raveendra Reddy Padala
+* Date: 26-Sep-15
+* Description: 
+*/
+#include<stdio.h>
+
+void my_atoi(char tmp[]);
+
+void my_atoi(char str[])
+{
+ 
+  int sum=0;
+  char *tmp=str;
+  while(*tmp!='\0' && *tmp>=48 && *tmp<=57)
+  {
+    sum=sum*10+(*tmp-48);
+    tmp++;
+  }
+ printf("%d\n",sum);
+} 
+
+int main()
+{
+  char str[50];
+  char *tmp=NULL;
+  printf("enter the string\n");
+  fgets(str,49,stdin);
+ 
+  my_atoi(str);
+  getch();
+}
