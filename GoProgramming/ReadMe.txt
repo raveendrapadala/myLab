@@ -1,1 +1,3 @@
-Here in this directory, i will be sharing my knowledge on Go Programming language.
+This repo consists of various examples of Go Programming Language.
+
+File Name: src/variables.go
