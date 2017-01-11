@@ -1,4 +1,3 @@
-
 /*
 * Concept: Variadic functions
 * Description: These are the functions that can be called with any number of trailing arguments.
@@ -36,25 +35,48 @@ func maxValue(numbers ...int) int {
  * @param variable number of integer parameters
  * @return none
  */
-func sumOfIntegers(nums ...int) {
+func sumOfIntegers(nums ...int) int{
     fmt.Print(nums, " ")
     total := 0
     for _, num := range nums {
         total += num
     }
     fmt.Println(total)
+    return total
+}
+
+/*
+ * @brief calculates sum of the input integer variables
+ * @param variable number of integer parameters
+ * @return none
+ */
+func average(sf ...float64) float64 {
+	fmt.Println(sf)
+	fmt.Printf("%T \n", sf)
+	var total float64
+	for _, v := range sf {
+		total += v
+	}
+	return total / float64(len(sf))
 }
 
 func main() {
 	/*Variadic functions can be called in the usual way with individual arguments.*/
 	greatestNumber := maxValue(4, 7, 9, 123, 543, 23, 435, 53, 125)
-	sumOfIntegers(1, 2)
-    	sumOfIntegers(1, 2, 3)
+	
+    	sumOfInt := sumOfIntegers(1, 2, 3)
+		
+	averageValue := average(43, 56, 87, 12, 45, 57)
+	
 	fmt.Println(greatestNumber)
+	fmt.Println(averageValue)
+	fmt.Println(sumOfInt)
 		
 	/*If you already have multiple args in a slice, apply them to a variadic function using func(slice...) like this.*/
 	numbersInslice := []int{1, 2, 3, 4}
-        sumOfIntegers(numbersInslice...)
+	sumOfInt =0
+        sumOfInt = sumOfIntegers(numbersInslice...)
+	fmt.Println(sumOfInt)
 }
 
 /*
