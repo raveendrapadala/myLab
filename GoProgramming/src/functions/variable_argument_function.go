@@ -1,3 +1,10 @@
+
+/*
+* Concept: Variadic functions
+* Description: These are the functions that can be called with any number of trailing arguments.
+* For example, fmt.Println is a common variadic function.
+*/
+
 package main
 
 import "fmt"
@@ -50,7 +57,7 @@ func main() {
 }
 
 /*
-Note: What does that code do?
-The first time through the range loop the index, i, will be zero. so largest will be set to the first number Originally largest is set to the zero value for an int, which is zero
-Zero would be greater than any negative number if you only have negative numbers you need largest to be something less than zero
-*/
+ * Note: What does that code do?
+ * The first time through the range loop the index, i, will be zero. so largest will be set to the first number Originally largest is set to the zero value for an int, which is zero
+ * Zero would be greater than any negative number if you only have negative numbers you need largest to be something less than zero
+ */
