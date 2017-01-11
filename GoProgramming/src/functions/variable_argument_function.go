@@ -2,7 +2,12 @@ package main
 
 import "fmt"
 
-func max(numbers ...int) int {
+/*
+ * @brief find the maximum number among the list given in the input
+ * @param variable number of integer parameters
+ * @return none
+ */
+func maxValue(numbers ...int) int {
 	var largest int
 	for _, v := range numbers {
 		if v > largest {
@@ -19,9 +24,29 @@ func max(numbers ...int) int {
 	return largest
 }
 
+/*
+ * @brief calculates sum of the input integer variables
+ * @param variable number of integer parameters
+ * @return none
+ */
+func sumOfIntegers(nums ...int) {
+    fmt.Print(nums, " ")
+    total := 0
+    for _, num := range nums {
+        total += num
+    }
+    fmt.Println(total)
+}
+
 func main() {
-	greatest := max(4, 7, 9, 123, 543, 23, 435, 53, 125)
-	fmt.Println(greatest)
+	greatestNumber := maxValue(4, 7, 9, 123, 543, 23, 435, 53, 125)
+	fmt.Println(greatestNumber)
+	
+	sumOfIntegers(1, 2)
+    	sumOfIntegers(1, 2, 3)
+	/*If you already have multiple args in a slice, apply them to a variadic function using func(slice...) like this.*/
+	numbersInslice := []int{1, 2, 3, 4}
+        sumOfIntegers(numbersInslice...)
 }
 
 /*
