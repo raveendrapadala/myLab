@@ -1,8 +1,12 @@
 /*
-* Concept: Variadic functions
-* Description: These are the functions that can be called with any number of trailing arguments.
-* For example, fmt.Println is a common variadic function.
-*/
+ * @file variable_argument_function.go
+ * @author Raveendra Reddy P
+ * @brief 
+ *  Concept: Variadic functions
+ *  Description: These are the functions that can be called with any number of trailing arguments.
+ *  For example, fmt.Println is a common variadic function.
+ * @bug:
+ */
 
 package main
 
