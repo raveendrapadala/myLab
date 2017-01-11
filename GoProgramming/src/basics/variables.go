@@ -1,3 +1,12 @@
+/*
+ * @file variables.go
+ * @author Raveendra Reddy P
+ * @brief 
+ *  Concept: variable declaration and definition
+ *  Description: Introduce the programmer with various types of variables and printing them in go language
+ * @bug:
+ */
+
 package main
 
 import (
