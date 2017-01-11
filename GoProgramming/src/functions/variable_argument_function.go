@@ -46,11 +46,12 @@ func sumOfIntegers(nums ...int) {
 }
 
 func main() {
+	/*Variadic functions can be called in the usual way with individual arguments.*/
 	greatestNumber := maxValue(4, 7, 9, 123, 543, 23, 435, 53, 125)
-	fmt.Println(greatestNumber)
-	
 	sumOfIntegers(1, 2)
     	sumOfIntegers(1, 2, 3)
+	fmt.Println(greatestNumber)
+		
 	/*If you already have multiple args in a slice, apply them to a variadic function using func(slice...) like this.*/
 	numbersInslice := []int{1, 2, 3, 4}
         sumOfIntegers(numbersInslice...)
