@@ -58,7 +58,7 @@ func switchWithOutCondition()(){
   type corresponding to its clause.
 */
 func switchWithDataTypes()(){
-    whatAmI := func(i interface{}) {
+    getInterfaceDatatype := func(i interface{}) {
         switch t := i.(type) {
         case bool:
             fmt.Println("I'm a bool")
@@ -68,9 +68,10 @@ func switchWithDataTypes()(){
             fmt.Printf("Don't know type %T\n", t)
         }
   }
-    whatAmI(true)
-    whatAmI(1)
-    whatAmI("hey")
+    getInterfaceDatatype(true)
+    getInterfaceDatatype(1)
+    getInterfaceDatatype("hey")
+    getInterfaceDatatype(2.0)
 }
 
 func main() {
