@@ -1,24 +1,36 @@
+/*
+ * @Description: when an exception is thrown, control is transferred to the NEAREST (catch) handler with a matching type.
+ * @Level: Basic
+ */
+
 #include <iostream>
 using namespace std;
 
-void f(int i)
+/*
+ * @Brief: Function is used to throw an integer exception
+ */
+void raiseExceptionFun(int i)
 {
     throw i;
 }
 
-void myExceptionFun(int i)
+/*
+ * @Brief: Detection of exception happens in try block 
+ */
+void catchExceptionFun(int i)
 {
+   //Trying to detect ANY exception that occurs inside ANY statement within this block
     try{
-        f(i);
+        raiseExceptionFun(i);
     }catch(int x){
 	    std::cout<< "myExceptionFun";
 	}
 }
 
 int main() {
-	// your code goes here
+	std::cout<< "During exception, nearest handler is called"
 	try{
-	    myExceptionFun(2);
+	    raiseExceptionFun(2);
 	}catch(int x){
 	    std::cout<< "main";
 	}
