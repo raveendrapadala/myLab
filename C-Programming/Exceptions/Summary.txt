@@ -1,0 +1,10 @@
+Guidelines while passing Objects to handlers.
+---------------------------------------------
+1. Exception Objects can be passed to handlers either by value or by reference. 
+2. The memory for the exception that is being thrown is allocated in an unspecified way (but it is not allocated on the free store). 
+3. Some implementations use a dedicated exception stack, on which exception objects are created. 
+4. When an exception is passed by reference, the handler receives a reference to the exception object that is constructed on the exception stack. 
+5. Passing an exception by reference ensures its polymorphic behavior. 
+6. Repeatedly copying objects that are passed by value is costly because the exception object can be constructed and destroyed several times before a matching handler has been found.
+7. Any exception can be caught using ellipses in the argument list.
+		eg: catch (…)
