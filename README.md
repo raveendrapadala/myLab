@@ -6,4 +6,5 @@ https://www.codechef.com/ide<br>
 http://cpp.sh/<br>
 # Projects to Refer
 ## C Programmer
-https://github.com/jbenner-radham/libsafec<br>
+Code: https://github.com/jbenner-radham/libsafec<br>
+Details: http://sourceforge.net/projects/safeclib/ <br>
