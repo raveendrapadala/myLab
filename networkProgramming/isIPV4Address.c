@@ -38,31 +38,53 @@ bool ValidateIPV4Address(const char *pIPV4Address)
 int main(void)
 {
    bool status = false;
+   //Negative Test Cases
    status = ValidateIPV4Address("2300:c100::1:4");
    printf("status should be false:%d\n",status);
    status = ValidateIPV4Address("fe80::ba2a:72ff:fefb:de4a");
    printf("status should be false:%d\n",status);
    status = ValidateIPV4Address("2300:100::1:4");
    printf("status should be false:%d\n",status);
+   status = ValidateIPV4Address("Raveendra");
+   printf("status should be false:%d\n",status);
+   status = ValidateIPV4Address("255.255.255.256");
+   printf("status should be false:%d\n",status);
+   
+   // Positive Test Cases
+   status = ValidateIPV4Address("255.255.255.255");
+   printf("status should be true:%d\n",status);
    status = ValidateIPV4Address("127.0.0.1");
    printf("status should be true:%d\n",status);
-
+   status = ValidateIPV4Address("0.0.0.0");
+   printf("status should be true:%d\n",status);
    return 0;
 
 }
 
 #if 0
 OUTPUT:
-ValidateIPV4Address::26 inet_pton AF_INET for 2300:c100::1:4 returned 0
-ValidateIPV4Address::35 IPV4 Address is INVALID
+ValidateIPV4Address::24 inet_pton AF_INET for 2300:c100::1:4 returned 0
+ValidateIPV4Address::33 IPV4 Address is INVALID
 status should be false:0
-ValidateIPV4Address::26 inet_pton AF_INET for fe80::ba2a:72ff:fefb:de4a returned 0
-ValidateIPV4Address::35 IPV4 Address is INVALID
+ValidateIPV4Address::24 inet_pton AF_INET for fe80::ba2a:72ff:fefb:de4a returned 0
+ValidateIPV4Address::33 IPV4 Address is INVALID
 status should be false:0
-ValidateIPV4Address::26 inet_pton AF_INET for 2300:100::1:4 returned 0
-ValidateIPV4Address::35 IPV4 Address is INVALID
+ValidateIPV4Address::24 inet_pton AF_INET for 2300:100::1:4 returned 0
+ValidateIPV4Address::33 IPV4 Address is INVALID
 status should be false:0
-ValidateIPV4Address::26 inet_pton AF_INET for 127.0.0.1 returned 1
-ValidateIPV4Address::30 IPV4 Address is valid
+ValidateIPV4Address::24 inet_pton AF_INET for Raveendra returned 0
+ValidateIPV4Address::33 IPV4 Address is INVALID
+status should be false:0
+ValidateIPV4Address::24 inet_pton AF_INET for 255.255.255.256 returned 0
+ValidateIPV4Address::33 IPV4 Address is INVALID
+status should be false:0
+ValidateIPV4Address::24 inet_pton AF_INET for 255.255.255.255 returned 1
+ValidateIPV4Address::28 IPV4 Address is valid
+status should be true:1
+ValidateIPV4Address::24 inet_pton AF_INET for 127.0.0.1 returned 1
+ValidateIPV4Address::28 IPV4 Address is valid
+status should be true:1
+ValidateIPV4Address::24 inet_pton AF_INET for 0.0.0.0 returned 1
+ValidateIPV4Address::28 IPV4 Address is valid
 status should be true:1
 #endif
