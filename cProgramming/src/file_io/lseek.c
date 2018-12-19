@@ -13,3 +13,13 @@ int main (void)
   
   exit(0);
 }
+
+/*************************************
+Output:
+$ ./a.out < /etc/passwd
+seek OK
+$ cat < /etc/passwd | ./a.out
+cannot seek
+$ ./a.out < /var/spool/cron/FIFO
+cannot seek
+**************************************/
